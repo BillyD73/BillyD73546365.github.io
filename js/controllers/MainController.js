@@ -81,7 +81,6 @@ angular.module('app')
         generateTags = function() {
             angular.forEach(repos, function(repo, index) {
                 //split the descriptions into individual words
-                if (repo.description!==null){
                 var arrayOfWords = repo.description.split(' ');
                 angular.forEach(arrayOfWords, function(word, wordIndex) {
                     //check each word to see if it begins with a hash
@@ -94,7 +93,6 @@ angular.module('app')
                             $scope.arrayOfFilters.push(word);
                         }
                     }
-                  }
                 });
                 arrayOfWords = [];
             });
