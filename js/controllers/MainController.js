@@ -132,15 +132,15 @@ angular.module('app')
           if (repo.description!==null) {alert(repo.description);alert("repo.description");}
             github.getGitHubData(url, function(response) {
                 repos = repos.concat(response.data);
-                //if (response.headers('link').indexOf("next") >= 0) {
+                if (response.headers('link').indexOf("next") >= 0) {
                     pageNumber = pageNumber + 1;
                     getAllGitHubData();
-              //  }
-            //    else {
+                }
+               else {
                     generateFilters();
                     generateTags();
                     pushToArray();
-            //    }
+                }
             });
         }
 
