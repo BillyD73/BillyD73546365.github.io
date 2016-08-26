@@ -54,7 +54,7 @@ angular.module('app')
                 var firstPeriodLocation = repo.name.indexOf(".");
                 var prefix = repo.name.substr(0, firstPeriodLocation);
 
-                alert(repo.name);
+                alert("TEST");
 
 
                 //change the prefixes to more user readable names
