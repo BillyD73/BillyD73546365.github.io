@@ -126,6 +126,7 @@ angular.module('app')
           //  url = "https://api.github.com/orgs/WASdev/repos?per_page=90&page=" + pageNumber;
             github.getGitHubData(url, function(response) {
                 repos = repos.concat(response.data);
+                if (response.headers!==null){
                 if (response.headers('link').indexOf("next") >= 0) {
                     pageNumber = pageNumber + 1;
                     getAllGitHubData();
@@ -135,6 +136,7 @@ angular.module('app')
                     generateTags();
                     pushToArray();
                 }
+              }
             });
         }
 
