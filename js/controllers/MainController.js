@@ -122,7 +122,7 @@ angular.module('app')
 
         //getting the data
         getAllGitHubData = function() {
-          //  url = "https://api.github.com/users/BillyD73/repos?per_page=90page=" + pageNumber;
+            url = "https://api.github.com/users/BillyD73/repos?per_page=90page=" + pageNumber;
           //  url = "https://api.github.com/orgs/WASdev/repos?per_page=90&page=" + pageNumber;
           if (repo.description!==null){
             alert(repo.description);}
