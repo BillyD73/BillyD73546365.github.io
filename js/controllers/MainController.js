@@ -1,5 +1,5 @@
 /*Adam Fielding's angular controller for the github repo page */
-
+//looking for where repo is coming from so I can have my own
 angular.module('app')
     .controller('MainController', ['$scope', 'github', '$location', function($scope, github, $location) {
 
