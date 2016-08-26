@@ -123,9 +123,6 @@ angular.module('app')
         //getting the data
         getAllGitHubData = function() {
             url = "https://api.github.com/users/BillyD73/repos?per_page=90&page=" + pageNumber;
-            console.log(url);
-            console.log("Pagenumber is");
-            console.log(pageNumber);
             github.getGitHubData(url, function(response) {
                 repos = repos.concat(response.data);
                 if (response.headers('link').indexOf("next") >= 0) {
