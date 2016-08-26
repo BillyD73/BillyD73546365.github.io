@@ -1,4 +1,4 @@
-# GitHub Pages for wasdev.github.io
+# GitHub Pages for BillyD73.github.io
 
 ## Features
 - This pages displayes all repositories from [github.com/wasdev](github.com/WASdev)

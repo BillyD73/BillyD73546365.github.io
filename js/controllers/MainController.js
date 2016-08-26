@@ -81,7 +81,9 @@ angular.module('app')
         generateTags = function() {
             angular.forEach(repos, function(repo, index) {
                 //split the descriptions into individual words
+                if (repo.description!==null){
                 var arrayOfWords = repo.description.split(' ');
+
                 angular.forEach(arrayOfWords, function(word, wordIndex) {
                     //check each word to see if it begins with a hash
                     if (word.indexOf("#") > -1) {
@@ -93,6 +95,7 @@ angular.module('app')
                             $scope.arrayOfFilters.push(word);
                         }
                     }
+                  }
                 });
                 arrayOfWords = [];
             });
@@ -120,6 +123,9 @@ angular.module('app')
         //getting the data
         getAllGitHubData = function() {
             url = "https://api.github.com/users/BillyD73/repos?per_page=90&page=" + pageNumber;
+            console.log(url);
+            console.log("Pagenumber is");
+            console.log(pageNumber);
             github.getGitHubData(url, function(response) {
                 repos = repos.concat(response.data);
                 if (response.headers('link').indexOf("next") >= 0) {
