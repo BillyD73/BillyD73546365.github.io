@@ -54,7 +54,7 @@ angular.module('app')
                 var firstPeriodLocation = repo.name.indexOf(".");
                 var prefix = repo.name.substr(0, firstPeriodLocation);
 
-                alert("TEST");
+              //  alert("TEST");
 
 
                 //change the prefixes to more user readable names
@@ -128,7 +128,7 @@ angular.module('app')
         getAllGitHubData = function() {
             url = "https://api.github.com/users/BillyD73/repos?per_page=90page=" + pageNumber;
           //  url = "https://api.github.com/orgs/WASdev/repos?per_page=90&page=" + pageNumber;
-          //alert("Alert");
+          alert(repo.name);
             github.getGitHubData(url, function(response) {
                 repos = repos.concat(response.data);
                 if (response.headers('link').indexOf("next") >= 0) {
