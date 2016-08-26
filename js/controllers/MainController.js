@@ -130,7 +130,6 @@ angular.module('app')
           //  url = "https://api.github.com/orgs/WASdev/repos?per_page=90&page=" + pageNumber;
           //alert("Hello my name is Aron the alert message");
           //if (repo.description!==null) {alert(repo.description);alert("repo.description");}
-          if (response.headers!==null) {alert(response.headers);alert("repo.description");}
             github.getGitHubData(url, function(response) {
                 repos = repos.concat(response.data);
                 if (response.headers('link').indexOf("next") >= 0) {
