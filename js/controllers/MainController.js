@@ -80,6 +80,7 @@ angular.module('app')
         //code for filtering based on tags in the repository
         generateTags = function() {
             angular.forEach(repos, function(repo, index) {
+              window.alert(test);
                 //split the descriptions into individual words
                 if (repo.description!==null){
                 var arrayOfWords = repo.description.split(' ');
@@ -123,6 +124,7 @@ angular.module('app')
         //getting the data
         getAllGitHubData = function() {
             url = "https://api.github.com/users/BillyD73/repos?per_page=90&page=" + pageNumber;
+
             github.getGitHubData(url, function(response) {
                 repos = repos.concat(response.data);
                 if (response.headers('link').indexOf("next") >= 0) {
