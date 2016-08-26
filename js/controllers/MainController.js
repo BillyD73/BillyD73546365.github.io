@@ -81,8 +81,8 @@ angular.module('app')
         generateTags = function() {
             angular.forEach(repos, function(repo, index) {
                 //split the descriptions into individual words
-                //if (repo.description!==null){
-                var arrayOfWords = repo.description.split(' ');
+                if (repo.description!==null){
+                var arrayOfWords = repo.description.split(' ');}
 
                 angular.forEach(arrayOfWords, function(word, wordIndex) {
                     //check each word to see if it begins with a hash
@@ -126,7 +126,6 @@ angular.module('app')
           //  url = "https://api.github.com/orgs/WASdev/repos?per_page=90&page=" + pageNumber;
             github.getGitHubData(url, function(response) {
                 repos = repos.concat(response.data);
-                if (response.headers!==null){
                 if (response.headers('link').indexOf("next") >= 0) {
                     pageNumber = pageNumber + 1;
                     getAllGitHubData();
@@ -136,7 +135,6 @@ angular.module('app')
                     generateTags();
                     pushToArray();
                 }
-              }
             });
         }
 
